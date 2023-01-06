@@ -22,6 +22,7 @@ const onClick = (event) => {
   if (!audio) return; // if there is no audio associated, get out of function
   audio.currentTime = 0; // set audio time to start
   audio.play(); // play the attached audio
+  event.target.classList.remove("playing");
 };
 
 const keys = Array.from(document.querySelectorAll(".key")); // creating an array from the all the divs with .key class
