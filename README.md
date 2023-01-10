@@ -6,3 +6,4 @@ Day 1 - Drum Kit - Keyboard and mouse - Responsive flex
 Day 2 - Analog Clock - JavaScript & CSS
 Day 3 - Updating CSS variables with JS
 Day 4 - Array Cardio 1
+Day 5 - Image Gallery
