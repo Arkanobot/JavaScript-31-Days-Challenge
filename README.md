@@ -9,3 +9,4 @@ Day 4 - Array Cardio 1
 Day 5 - Image Gallery
 Day 6 - City search with population
 Day 7 - Array Cardio 2
+Day 8 - Canvas Drawing
