@@ -12,3 +12,4 @@ Day 7 - Array Cardio 2
 Day 8 - Canvas Drawing
 Day 9 - Learning some Dev tools
 Day 10 - Shift clicking Checkboxes in Menu
+Day 11 - Video Player ( fullscreen function yet to impliment)
