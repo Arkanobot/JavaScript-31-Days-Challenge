@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"
+    ></script>
+  </head>
+  <body>
+    <script>
+      const pressed = []; // empty array to store value
+      const secretCode = "sbkdev"; // a secret code
+
+      //adding event listener to look for the key
+      window.addEventListener("keyup", (e) => {
+        // pushing the pressed key to the array pushed
+        pressed.push(e.key);
+        // removing the letters if the pushed array has more letters than the secret code length
+        console.log(pressed);
+        pressed.splice(
+          -secretCode.length - 1,
+          pressed.length - secretCode.length
+        );
+        // if joined pressed array includes the secret code then do this
+        if (pressed.join("").includes(secretCode)) {
+          // log the congrats message
+          console.log("You have Figured Out the Secret Code !!!");
+          // and run the cornify function
+          cornify_add();
+        }
+      });
+    </script>
+  </body>
+</html>
