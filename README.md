@@ -14,3 +14,4 @@ Day 9 - Learning some Dev tools
 Day 10 - Shift clicking Checkboxes in Menu
 Day 11 - Video Player ( fullscreen function yet to impliment)
 Day 12 - Key Sequence Detection (Secret Konami Code)
+Day 13 - Fade in Images at Scroll
