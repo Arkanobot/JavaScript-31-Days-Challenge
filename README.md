@@ -15,3 +15,4 @@ Day 10 - Shift clicking Checkboxes in Menu
 Day 11 - Video Player ( fullscreen function yet to impliment)
 Day 12 - Key Sequence Detection (Secret Konami Code)
 Day 13 - Fade in Images at Scroll
+Day 14 - Learning Copy by value and Copy by Reference

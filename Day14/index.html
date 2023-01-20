@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Reference VS Copy</title>
+  </head>
+  <body>
+    <script>
+      // start with strings, numbers and booleans
+
+      let name = "Shreyas";
+      let name2 = name;
+      name = "Shreyas Bhat";
+
+      // when this is done, the Name will change and name 2 will remain Shreyas... and name 1 will change to Shreyas Bhat... So reassigning the original value in variable 1 will not change the 2nd variable
+
+      // Let's say we have an array
+      const players = ["Wes", "Sarah", "Ryan", "Poppy"];
+      const team = players;
+      team[3] = "lux";
+
+      // this will change the value in the index 3 to lux in both Team as well as the original array players, this is due to object by reference... the array players is referenced in team and not saved as value in it.. thus changing team will change players
+
+      // and we want to make a copy of it.
+
+      const team2 = players.slice(); // giving slice will with no inputs will return a new copy of the entire array this we can modify the array without changing original array
+      const team3 = [].concat(players); // way 2 of doing same thing
+      const team4 = [...players]; // the es6 way of doin the same thing
+      const team5 = Array.from(players); // another way of doing the same thing
+      // You might think we can just do something like this:
+
+      // however what happens when we update that array?
+
+      // now here is the problem!
+
+      // oh no - we have edited the original array too!
+
+      // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+
+      // So, how do we fix this? We take a copy instead!
+
+      // one way
+
+      // or create a new array and concat the old one in
+
+      // or use the new ES6 Spread
+
+      // now when we update it, the original one isn't changed
+
+      // The same thing goes for objects, let's say we have a person object
+
+      // with Objects
+      const person = {
+        name: "Wes Bos",
+        age: 80,
+      };
+
+      // and think we make a copy:
+
+      // how do we take a copy instead?
+
+      Object.assign({}, person); // object.assign takes 3 values {} / the object type, the object that need to be copied from, and the new values to be modified... for example Object.assign({}, person, {height: "5'9"}) this creates a new object getting values from object person and then adding a new key height, with value 5'9
+      // this has a limitation, the object will only get values of the current level, So in case if a object has a object inside it, it will still be referenced and if you change value of object within object, it will still change... in case we want a full clone, we need to get a function cloneDeep from libraries to get a full clone of object
+
+      const Person1 = { ...person }; // does the same but will only get object up to 1 level deep
+
+      // We will hopefully soon see the object ...spread
+
+      // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+      // a layman technique to clone object - not recommended
+      const dev2 = JSON.parse(JSON.stringify(person)); // what this does is first stringify the person, and then convert it back to object and this creating a new clone
+    </script>
+  </body>
+</html>
